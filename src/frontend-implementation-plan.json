@@ -1,0 +1,55 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Surprise photo reveal after secret-name unlock",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "summary": "Add the two uploaded photos as frontend static assets and reference them by filename from the React app (no backend fetch).",
+      "acceptanceCriteria": [
+        "Both images exist in the frontend as static assets and are loadable by the browser without any backend changes.",
+        "The React app uses the exact filenames \"photo_2026-02-06_14-51-36.jpg\" and \"photo_2026-02-06_14-51-40.jpg\" when rendering the images (or uses a clearly documented renamed/copied path while preserving the originals).",
+        "No new runtime dependencies or external CDNs are introduced for image handling."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/photo_2026-02-06_14-51-36.jpg",
+          "operation": "create",
+          "description": "Add the provided uploaded image to frontend public static assets so it can be loaded directly by the browser without backend involvement."
+        },
+        {
+          "path": "frontend/public/assets/photo_2026-02-06_14-51-40.jpg",
+          "operation": "create",
+          "description": "Add the provided uploaded image to frontend public static assets so it can be loaded directly by the browser without backend involvement."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Update image rendering to reference the new static asset filenames (photo_2026-02-06_14-51-36.jpg, photo_2026-02-06_14-51-40.jpg) from the unlocked content, without introducing new dependencies. Use existing shadcn-ui primitives already in the app (e.g., Button) as needed; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Show a dedicated surprise photo reveal section in the unlocked view with romantic styling and a gentle entrance animation, replacing or relocating the placeholder photo.",
+      "acceptanceCriteria": [
+        "The two uploaded photos are visible only when viewState is \"unlocked\" (they do not appear on the initial gift screen or the secret-name gate screen).",
+        "The photos are displayed as a cohesive section (e.g., stacked on mobile and side-by-side on larger screens) with rounded corners and subtle shadow/glow consistent with other cards.",
+        "The section appears with a smooth reveal animation after unlocking (no jarring layout shift).",
+        "The existing placeholder photo usage (/assets/generated/minu-photo-placeholder.dim_1200x800.png) is either replaced by these two uploaded photos or moved so that the uploaded photos are clearly included in the unlocked content."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "In the unlocked view, replace (or clearly reposition) the current placeholder photo section that references /assets/generated/minu-photo-placeholder.dim_1200x800.png with a dedicated \"surprise\" section that renders both uploaded photos from static assets. Layout should be responsive (single column on small screens, two columns on larger screens), with rounded corners and subtle shadow/glow consistent with existing card-glow/photo-frame styling. Apply a gentle entrance animation on reveal after unlocking. Use existing shadcn-ui primitives already in the app where applicable; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add/adjust CSS utilities for the surprise photo reveal entrance animation (fade/slide/expand) and any minimal supporting styling needed to keep the section consistent with the existing romantic theme (e.g., rounded corners, subtle glow/shadow) without modifying any shadcn component files."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-the-two-user-uploaded-images-photo-2026-02-06-14-51-36-jpg-and-photo-2026-02-06-14-51-40-jpg-to-the-frontend-static-assets-and-reference-them-from-the-react-app-do-not-fetch-them-from-the-backend",
+      "featureTitle": "Add the two user-uploaded images (photo_2026-02-06_14-51-36.jpg and photo_2026-02-06_14-51-40.jpg) to the frontend static assets and reference them from the React app (do not fetch them from the backend).",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-in-the-unlocked-birthday-content-after-the-user-enters-the-secret-name-minu-and-clicks-unlock-display-the-two-uploaded-images-as-a-dedicated-surprise-photo-reveal-section-styled-consistently-with-the-existing-romantic-theme-rounded-corners-subtle-shadow-glow-responsive-sizing-and-shown-with-a-gentle-entrance-animation-fade-slide-expand",
+      "featureTitle": "In the unlocked birthday content (after the user enters the secret name \"minu\" and clicks Unlock), display the two uploaded images as a dedicated \"surprise\" photo reveal section, styled consistently with the existing romantic theme (rounded corners, subtle shadow/glow, responsive sizing) and shown with a gentle entrance animation (fade/slide/expand).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

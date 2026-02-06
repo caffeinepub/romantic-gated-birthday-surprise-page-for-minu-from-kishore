@@ -1,0 +1,6 @@
+{
+  "frontend/src/App.tsx": "Main birthday surprise application with three-state flow (initial gift prompt, secret name gate, and unlocked birthday content) featuring romantic sections including a surprise photo gallery with two uploaded photos that appear after unlocking, along with hero, love message, wishes, plans, and interactive surprise button.",
+  "frontend/src/components/FloatingHearts.tsx": "Lightweight background animation component that renders floating heart emojis with randomized positions, delays, and durations using CSS keyframes.",
+  "frontend/src/index.css": "Global styles with romantic OKLCH color palette (rose, blush, lavender, mauve), elegant serif typography, gradient background animation, card glow effects, and smooth animations including new photo reveal animations (fade-in, slide-left, slide-right) for the surprise photo gallery.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic color tokens mapped to CSS variables for consistent theming throughout the application."
+}

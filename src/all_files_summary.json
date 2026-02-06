@@ -1,0 +1,15 @@
+{
+  "backend/main.mo": "Minimal Motoko actor with no logic.",
+  "feature_evidence.json": "Lists feature evidence for adding two static images and showing them in the unlocked birthday section with animations.",
+  "frontend-file-summaries.txt": "Prewritten summaries describing key frontend files such as App, FloatingHearts, index.css, and Tailwind config.",
+  "frontend/index.css": "Defines global Tailwind base variables and dark mode color tokens.",
+  "frontend/index.html": "HTML entry point providing the root container and loading the React main script.",
+  "frontend/src/App.tsx": "Main React app handling the three‑step birthday unlock flow and romantic UI logic.",
+  "frontend/src/components/FloatingHearts.tsx": "Generates animated floating heart elements with randomized styling.",
+  "frontend/src/hooks/useActor.ts": "Hook creating and managing an authenticated or anonymous backend actor, with query invalidation.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Implements Internet Identity provider and hook for login, identity loading, and status tracking.",
+  "frontend/src/index.css": "Global styles including romantic color palette, gradients, typography, and animations.",
+  "frontend/src/main.tsx": "React entry file wiring providers (identity and react‑query) and rendering the App.",
+  "frontend/tailwind.config.js": "Tailwind config enabling dark mode, container settings, extended OKLCH color palettes, custom radii, shadows, and keyframe animations with several plugins. It defines themed colors for UI elements including romantic and sidebar schemes.",
+  "project_state.json": "Project state describing a single-file romantic birthday website with gated reveal and animation features. Includes schema info, requirements, and existing feature definitions."
+}

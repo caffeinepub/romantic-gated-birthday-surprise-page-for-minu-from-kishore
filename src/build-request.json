@@ -1,0 +1,58 @@
+{
+  "kind": "build_request",
+  "title": "Show 2 uploaded surprise photos after the secret name unlocks",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "text": "Add the two user-uploaded images (photo_2026-02-06_14-51-36.jpg and photo_2026-02-06_14-51-40.jpg) to the frontend static assets and reference them from the React app (do not fetch them from the backend).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-1"
+        ],
+        "quotes": [
+          "add this 2 pictures after  she click her name like a surprise"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Both images exist in the frontend as static assets and are loadable by the browser without any backend changes.",
+        "The React app uses the exact filenames \"photo_2026-02-06_14-51-36.jpg\" and \"photo_2026-02-06_14-51-40.jpg\" when rendering the images (or uses a clearly documented renamed/copied path while preserving the originals).",
+        "No new runtime dependencies or external CDNs are introduced for image handling."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "In the unlocked birthday content (after the user enters the secret name \"minu\" and clicks Unlock), display the two uploaded images as a dedicated \"surprise\" photo reveal section, styled consistently with the existing romantic theme (rounded corners, subtle shadow/glow, responsive sizing) and shown with a gentle entrance animation (fade/slide/expand).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-1"
+        ],
+        "quotes": [
+          "add this 2 pictures after  she click her name like a surprise"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The two uploaded photos are visible only when viewState is \"unlocked\" (they do not appear on the initial gift screen or the secret-name gate screen).",
+        "The photos are displayed as a cohesive section (e.g., stacked on mobile and side-by-side on larger screens) with rounded corners and subtle shadow/glow consistent with other cards.",
+        "The section appears with a smooth reveal animation after unlocking (no jarring layout shift).",
+        "The existing placeholder photo usage (/assets/generated/minu-photo-placeholder.dim_1200x800.png) is either replaced by these two uploaded photos or moved so that the uploaded photos are clearly included in the unlocked content."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify files under frontend/src/components/ui (shadcn components) or other paths listed as immutable in SYSTEM_CONTEXT.",
+    "Do not add new third-party runtime dependencies beyond the existing template stack.",
+    "Keep all changes frontend-only; the backend Motoko actor should remain unchanged for this feature."
+  ],
+  "nonGoals": [
+    "Adding image upload UI or storing images on-chain.",
+    "Adding authentication or per-user photo libraries.",
+    "Editing/retouching the uploaded photos."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
